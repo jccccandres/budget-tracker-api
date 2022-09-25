@@ -16,15 +16,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()
-            ->count(1)
-            ->create();
+        // User::factory()
+        //     ->count(1)
+        //     ->create();
 
         User::create([
-            'name' => 'Sel Valerio',
-            'email' => 'valeriochriscelc@gmail.com',
-            'username' => 'selvalerio',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'name' => 'JC Andres',
+            'email' => 'jcsandres9@gmail.com',
+            'username' => 'superuser',
+            'password' => 'password123', // password123
             'remember_token' => Str::random(10)
         ]);
     }

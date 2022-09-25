@@ -26,8 +26,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  */
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function(){
-    Route::apiResource('users', UserController::class);
-    
     Route::post('login', [AuthController::class, 'login']);
 });
 
@@ -36,4 +34,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], f
  */
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'middleware' => 'auth:sanctum'], function(){
     Route::post('logout', [AuthController::class, 'logout']);
+
+    Route::apiResource('users', UserController::class);
 });
