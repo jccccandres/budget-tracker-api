@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\V1\UserResource;
+use App\Http\Requests\V1\StoreUserRequest;
 
 class AuthController extends Controller
 {
@@ -41,5 +42,10 @@ class AuthController extends Controller
         return [
             'message' => 'Logged Out!'
         ];
+    }
+
+    public function register(StoreUserRequest $request)
+    {
+        return new UserResource(User::create($request->all()));
     }
 }
