@@ -46,6 +46,7 @@ class AuthController extends Controller
 
     public function register(StoreUserRequest $request)
     {
-        return new UserResource(User::create($request->all()));
+        return (new UserResource(User::create($request->all())))
+                    ->additional(['message' => 'User registered!']);
     }
 }
