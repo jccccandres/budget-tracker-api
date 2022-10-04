@@ -37,4 +37,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'm
     Route::post('logout', [AuthController::class, 'logout']);
 
     Route::apiResource('users', UserController::class);
+    Route::apiResource('types', TypeController::class);
+    Route::apiResource('categories', CategoryController::class);
 });
