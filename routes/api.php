@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +40,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'm
     Route::apiResource('users', UserController::class);
     Route::apiResource('types', TypeController::class);
     Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('transactions', TransactionController::class);
+    
+    Route::get('transactionMonths', [TransactionController::class, 'transactionMonths']);
 });
