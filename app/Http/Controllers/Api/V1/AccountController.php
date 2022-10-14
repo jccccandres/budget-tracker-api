@@ -64,8 +64,19 @@ class AccountController extends Controller
      * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Account $account)
+    public function destroy($id)
     {
-        //
+        if (Account::destroy($id)) {
+            return response()->json([
+                'status' => 1,
+                'message' => 'Account deleted!'
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 0,
+                'message' => 'Failed to delete!'
+            ]);
+        }
     }
 }
