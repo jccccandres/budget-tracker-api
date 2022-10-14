@@ -40,6 +40,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'm
     Route::apiResource('users', UserController::class);
     Route::apiResource('types', TypeController::class);
     Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('accounts', AccountController::class);
     Route::apiResource('transactions', TransactionController::class);
     
     Route::get('transactionMonths', [TransactionController::class, 'transactionMonths']);

@@ -22,9 +22,5 @@ class TypeSeeder extends Seeder
         Type::create([
             'description' => 'Expense'
         ]);
-
-        Type::create([
-            'description' => 'Savings'
-        ]);
     }
 }
