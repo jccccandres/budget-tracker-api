@@ -32,7 +32,7 @@ class TransactionController extends Controller
 
         $transactions = Transaction::where(['user_id' => auth()->user()->id])
                             ->whereBetween('date_transact', [date('Y-m-01', strtotime($params['date'])), date('Y-m-t', strtotime($params['date']))])
-                            ->orderBy('date_transact')
+                            ->orderBy('date_transact', 'DESC')
                             ->get()
                             ->groupBy(
                                 function($val) {
